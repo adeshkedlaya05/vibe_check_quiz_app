@@ -18,5 +18,5 @@ VibeCheck Quizzz App is a React-based quiz application designed to help users di
 1. Clone the repository:
 
 ```bash
-git clone 
-cd vibecheck-quizzz
+git clone https://github.com/adeshkedlaya05/vibe_check_quiz_app.git
+
