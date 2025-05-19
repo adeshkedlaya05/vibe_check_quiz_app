@@ -6,7 +6,7 @@ VibeCheck Quizzz App is a React-based quiz application designed to help users di
 
 ## Features
 
-- Daily quiz with 7 unique questions tailored for each day (Sunday to Friday)
+- Daily quiz with 5 unique questions tailored for each day (Sunday to Saturday)
 - Answers categorize your vibe into different mood types
 - Clean, responsive UI with an engaging starry night background
 - Simple and intuitive interface for seamless user experience
@@ -24,7 +24,4 @@ VibeCheck Quizzz App is a React-based quiz application designed to help users di
 
 ```bash
 git clone https://github.com/adeshkedlaya05/vibe_check_quiz_app.git
-
-
-
 
