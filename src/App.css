@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Starry night background with small moving stars */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.2;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.quiz-container {
+  background: rgba(0, 0, 30, 0.75);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.2);
+  max-width: 480px;
+  width: 100%;
+  backdrop-filter: blur(8px);
+}
+
+.input-name {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: #45a049;
+}
+
+.options {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.option-btn {
+  background: #2e8b57;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.option-btn:hover {
+  background: #3cb371;
+}
+
+/* Star background using multiple layers of small dots */
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: twinkle 4s infinite ease-in-out alternate;
+}
+
+body::after {
+  background-image: radial-gradient(white 0.5px, transparent 0.5px);
+  background-size: 10px 10px;
+  animation: twinkle 6s infinite ease-in-out alternate;
+  opacity: 0.6;
 }
